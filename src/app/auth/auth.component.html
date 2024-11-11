@@ -1,0 +1,82 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="text-center mb-4">
+        <button (click)="toggleForm()" class="btn btn-secondary">
+          {{ isLoginMode ? "Switch to Sign Up" : "Switch to Login" }}
+        </button>
+      </div>
+
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>{{ isLoginMode ? "Login" : "Register" }}</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Enter your email"
+                [(ngModel)]="email"
+                name="username"
+                name="email"
+                required
+              />
+            </div>
+
+            @if(!isLoginMode){
+            <div class="form-group mb-3">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                class="form-control"
+                placeholder="Choose a username"
+                [(ngModel)]="username"
+                name="username"
+                required
+              />
+            </div>
+
+            } @if(!isLoginMode){
+            <div class="form-group mb-3">
+              <label for="age">Age</label>
+              <input
+                type="number"
+                id="age"
+                class="form-control"
+                placeholder="Enter your age"
+                [(ngModel)]="age"
+                name="age"
+                min="18"
+                max="60"
+                required
+              />
+            </div>
+            }
+
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                placeholder="Enter your password"
+                [(ngModel)]="password"
+                name="password"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              {{ isLoginMode ? "Login" : "Register" }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

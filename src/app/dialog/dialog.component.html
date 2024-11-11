@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>
+  {{ data.template ? "Edit Template" : "Create Template" }}
+</h2>
+<form [formGroup]="templateForm" (ngSubmit)="onSave()">
+  <mat-form-field class="full-width">
+    <mat-label>Template Text</mat-label>
+    <input matInput formControlName="templateText" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Preview JSON</mat-label>
+    <textarea matInput formControlName="preview" rows="5" required></textarea>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button color="primary" [disabled]="templateForm.invalid">
+      Save
+    </button>
+  </div>
+</form>

@@ -1,0 +1,15 @@
+/* .container {
+  background-color: #a020f0;
+} */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.text-center button {
+  width: 50%;
+}

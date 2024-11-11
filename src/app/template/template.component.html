@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="my-4">Templates</h1>
+
+  <button class="btn btn-primary mb-3" (click)="CreateDialog()">
+    Create Template
+  </button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Template</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let template of templates">
+        <td>{{ template.templateText }}</td>
+        <td>
+          <button class="btn btn-info btn-sm" (click)="preview(template.id)">
+            Preview
+          </button>
+          <button
+            class="btn btn-warning btn-sm"
+            (click)="editTemplate(template)"
+          >
+            Edit
+          </button>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteTemplate(template.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
