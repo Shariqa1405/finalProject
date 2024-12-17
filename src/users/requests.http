@@ -1,0 +1,70 @@
+###signup user
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+    "email":"test3@test.com",
+    "password":"test123",
+    "username":"test3",
+    "age":19
+
+}
+
+### signin user
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "signin":"batman",
+    "password":"test123"
+}
+
+### whoami
+GET http://localhost:3000/auth/whoami
+
+### signout the user
+POST http://localhost:3000/auth/signout
+
+
+### find user with id
+GET http://localhost:3000/auth/13
+
+### find all user with a given email
+GET http://localhost:3000/auth?reziko@test.com
+
+
+### delete user with a given id
+DELETE  http://localhost:3000/auth/18
+
+### update user
+PATCH http://localhost:3000/auth/6
+Content-Type: application/json
+
+{
+    "email":"rezi@rezi.com",
+    "username":"rezo",
+    "age":21
+
+}
+
+### create template
+
+POST http://localhost:3000/template/create
+Content-Type:application/json
+
+{
+  "templateText": "Hello, {{username}}, you are {{age}}",
+  "preview": {
+    "username": "Revaza",
+    "age":19
+  },
+  "id": 9
+}
+
+###
+GET http://localhost:3000/template/9/preview
+
+###
+
+
+
